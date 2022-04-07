@@ -20,6 +20,9 @@ void leftshift(char line[], bool pos);//let object move to left
 void insertBox(char line[], int n);
 bool isDead(char line[], int current, int dino, bool kiritoFlag);
 void killEnemy(char floor[], char ceiling[], int dino);
+void gotoxy(int x, int y){
+    printf("\033[%d;%dH", (y), (x));
+}
 
 int main(){
 
@@ -42,7 +45,10 @@ int main(){
     int kiritoTime = 300;
     bool kiritoFlag = 0;
 
+    system("cls");
     while(true){
+        gotoxy(0, 0);//set cursor position
+        printf("\e[?25l");//hide cursor
         char op = '1';
         if(kbhit()){
             op = getch();
@@ -57,6 +63,7 @@ int main(){
             showImage();
             playMusic();
             kiritoFlag = 1;
+            system("cls");
         }
         if(countDown){ --countDown; }
         if(!countDown){ current = 1; }
@@ -84,7 +91,7 @@ int main(){
         printf("Your Score: %d", score);
 
         Sleep(sleeptime * 100);
-        system("cls");
+        //system("cls");
         leftshift(floor, 0);
         leftshift(ceiling, 1);
         ++score;
