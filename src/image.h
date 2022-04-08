@@ -3,7 +3,7 @@
 
 void showImage(){
     FILE *fp = fopen("../kirito.txt", "r");
-    char image[400];
+    char image[150];
     while(fgets(image, sizeof(image), fp) != NULL){
         printf("%s", image);
     }

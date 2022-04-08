@@ -4,11 +4,5 @@
 #include <conio.h>
 
 void playMusic(){
-    PlaySound(TEXT("C:\\Users\\gene\\code\\dino-project\\c8763.wav"), NULL, SND_SYNC);
-    return ;
-}
-
-void playBackGroundMusic(){
-    PlaySound(TEXT("C:\\Users\\gene\\code\\dino-project\\76u3o-ux9ue.wav"), NULL, SND_ASYNC);
-    return ;
+    PlaySound(TEXT("..\\c8763.wav"), NULL, SND_SYNC);
 }
